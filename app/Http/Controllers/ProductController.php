@@ -22,7 +22,7 @@ class ProductController extends Controller
         return view('/layouts/product/product-add');
     }
 
-    public function submite(Request $request){
+    public function gode(Request $request){
 
         dd($request);
         $product = Product::create([
@@ -38,7 +38,7 @@ class ProductController extends Controller
 //            'photo' => $request->input('photo'),
         ]);
         $product -> save();
-        return redirect()->route('add');
+        return redirect()->route('/');
     }
 
 }

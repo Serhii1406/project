@@ -69,11 +69,9 @@
         @endif
     </div>
 </nav>
-<form>
         <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
             @yield('content')
         </div>
-</form>
 <footer class="container py-5">
     <form class="container">
         <div class="row">

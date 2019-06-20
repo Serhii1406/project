@@ -16,7 +16,7 @@ Route::get('/', 'MainController@main')->name('main');
 Route::get('/product', 'ProductController@offer')->name('product');
 
 Route::get('/product/add', 'ProductController@add')->name('add');
-Route::post('/product/add', 'ProductController@submite');
+Route::post('/product/add', 'ProductController@gode');
 
 Route::get('/users', 'UserController@user')->name('user');
 
