@@ -24,7 +24,7 @@ class ProductController extends Controller
 
     public function gode(Request $request){
 
-        dd($request);
+//        dd($request);
         $product = Product::create([
             'name' => $request->input('name'),
             'cost' => $request->input('cost'),
@@ -38,7 +38,7 @@ class ProductController extends Controller
 //            'photo' => $request->input('photo'),
         ]);
         $product -> save();
-        return redirect()->route('/');
+        return redirect()->route('main');
     }
 
 }
