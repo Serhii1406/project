@@ -41,4 +41,30 @@ class ProductController extends Controller
         return redirect()->route('main');
     }
 
+    public function delete($id){
+        $product=Product::findorfail($id);
+        $product->delete();
+        return redirect()->route('product');
+    }
+
+    public function edit(Product $product){
+        return view('/layouts/admins/product-edit');
+    }
+
+    public function update(Request $request,$id){
+        $product=Product::findorfail($id);
+        $product->update([
+            'name' => $request->input('name'),
+            'cost' => $request->input('cost'),
+            'wallet' => $request->input('wallet'),
+            'diagonal' => $request->input('diagonal'),
+            'processor' => $request->input('processor'),
+            'videocard' => $request->input('videocard'),
+            'memory' => $request->input('memory'),
+            'kilk' => $request->input('kilk'),
+            'information' => $request->input('information'),
+//            'photo' => $request->input('photo'),
+        ]);
+    }
+
 }
