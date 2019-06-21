@@ -47,8 +47,13 @@ class ProductController extends Controller
         return redirect()->route('product');
     }
 
+    public function adminedit(){
+        $product = Product::orderby('created_at','desc')->get();
+        return view('/layouts/admins/admin-product-edit', compact('product'));
+    }
+
     public function edit(Product $product){
-        return view('/layouts/admins/product-edit');
+        return view('/layouts/product/product-edit', compact('product'));
     }
 
     public function update(Request $request,$id){

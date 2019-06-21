@@ -9,7 +9,7 @@
             Переглянути всіх користувачів <a href="{{route('user')}}" class="alert-link">( тик )</a>.
         </div>
         <div class="alert alert-primary" role="alert">
-            Редагувати оголошення <a href="{{route('edit', $product)}}" class="alert-link">( тик )</a>.
+            Редагувати оголошення <a href="{{route('product-edit')}}" class="alert-link">( тик )</a>.
         </div>
     </form>
 

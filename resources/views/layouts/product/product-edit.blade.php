@@ -16,7 +16,7 @@
                     <label class="mr-sm-2" for="wallet" >Тип валюти</label>
                     <select class="custom-select mr-sm-2" name="wallet" id="wallet">
                         @foreach($product as $object)
-                            <option value="{{$object['new_wallet']}}"{{$offer['wallet']== $object['wallet'] ?'selected':''}}>{{$object['wallet']}}</option>
+                            <option value="{{$object['new_wallet']}}"{{$object['wallet']== $object['wallet'] ?'selected':''}}>{{$object['wallet']}}</option>
                         @endforeach
                     </select>
                 </div>

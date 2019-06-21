@@ -19,6 +19,7 @@ Route::get('/product', 'ProductController@offer')->name('product');
 Route::get('/product/add', 'ProductController@add')->name('add');
 Route::post('/product/add', 'ProductController@gode');
 Route::get('/product/delete/{id}', 'ProductController@delete')->name('delete');
+Route::get('/product/edit', 'ProductController@adminedit')->name('product-edit');
 Route::get('/product/edit/{product}', 'ProductController@edit')->name('edit');
 Route::post('/product/edit/{product}', 'ProductController@update');
 
