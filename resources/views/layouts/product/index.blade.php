@@ -12,6 +12,7 @@
     }
 </style>
 <form>
+    {{ csrf_field() }}
     <div class="users-tables-group">
         <div class="table-users-row">
             <div class="table-user">
@@ -50,6 +51,12 @@
                             </tr><tr>
                                 <td>{{__('education.Inf')}}</td>
                                 <td>{{$offer->information}}</td>
+                            </tr>
+                            <tr>
+                                @if(Auth::check()==true && Auth::user()->role=='Moderator')
+                                <td><a href="{{route('edit',$product)}}" class=" action">{{__('offers.Edit')}}</a></td>
+                                <td><a href="{{route('delete',$product)}}" class="action">{{__('offers.Delete')}}</a></td>
+                                @endif
                             </tr>
                             </tbody>
                         </table>

@@ -47,12 +47,8 @@ class ProductController extends Controller
         return redirect()->route('product');
     }
 
-    public function adminedit(){
-        $product = Product::orderby('created_at','desc')->get();
-        return view('/layouts/admins/admin-product-edit', compact('product'));
-    }
-
-    public function edit(Product $product){
+    public function edit(Product $product, $request){
+        dd($request);
         return view('/layouts/product/product-edit', compact('product'));
     }
 
@@ -68,8 +64,9 @@ class ProductController extends Controller
             'memory' => $request->input('memory'),
             'kilk' => $request->input('kilk'),
             'information' => $request->input('information'),
-//            'photo' => $request->input('photo'),
         ]);
+        $product -> update();
+        return redirect()->route('product');
     }
 
 }

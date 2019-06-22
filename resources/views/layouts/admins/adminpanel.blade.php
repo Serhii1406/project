@@ -8,9 +8,6 @@
         <div class="alert alert-primary" role="alert">
             Переглянути всіх користувачів <a href="{{route('user')}}" class="alert-link">( тик )</a>.
         </div>
-        <div class="alert alert-primary" role="alert">
-            Редагувати оголошення <a href="{{route('product-edit')}}" class="alert-link">( тик )</a>.
-        </div>
     </form>
 
 @stop
