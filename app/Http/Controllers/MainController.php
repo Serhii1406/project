@@ -11,7 +11,7 @@ class MainController extends Controller
 {
 
     public function main(){
-        return view('/layouts/main');
+        return redirect(route('index'));
     }
 
 }

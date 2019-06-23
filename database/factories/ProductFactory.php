@@ -30,6 +30,7 @@ $factory->define(Product::class, function (Faker $faker) {
     ];
 
     return [
+        'image'=>$faker->image(),
         'models'=>$faker->randomElement($models),
         'cost'=>random_int(5000, 20000),
         'diagonal' => $faker->randomElement(['14.1', '15.4', '16', '13.3']),

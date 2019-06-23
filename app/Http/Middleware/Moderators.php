@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Support\Facades\Auth;
 
 
-class Input
+class Moderators
 {
     /**
      * Handle an incoming request.

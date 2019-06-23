@@ -13,18 +13,20 @@
 
 Route::get('/', 'MainController@main')->name('main');
 
+Route::get('/home', 'IndexController@index')->name('index');
+
 
 
 Route::get('/product', 'ProductController@offer')->name('product');
-Route::get('/product/add', 'ProductController@add')->name('add');
+Route::get('/product/add', 'ProductController@add')->name('add')->middleware('moders');
 Route::post('/product/add', 'ProductController@gode');
-Route::get('/product/delete/{id}', 'ProductController@delete')->name('delete');
-Route::get('/product/edit/', 'ProductController@edit')->name('edit');
+Route::get('/product/delete/{id}', 'ProductController@delete')->name('delete')->middleware('moders');
+Route::get('/product/edit/{products}', 'ProductController@edit')->name('edit')->middleware('moders');
 Route::post('/product/edit/{product}', 'ProductController@update');
 
 
 
-Route::get('/users', 'UserController@user')->name('user');
+Route::get('/users', 'UserController@user')->name('user')->middleware('moders');
 
 
 

@@ -26,6 +26,7 @@ class ProductController extends Controller
 
 //        dd($request);
         $product = Product::create([
+            'image' => $request->files('image'),
             'name' => $request->input('name'),
             'cost' => $request->input('cost'),
             'wallet' => $request->input('wallet'),
@@ -47,9 +48,10 @@ class ProductController extends Controller
         return redirect()->route('product');
     }
 
-    public function edit(Product $product, $request){
-        dd($request);
-        return view('/layouts/product/product-edit', compact('product'));
+    public function edit(Product $products){
+//        dd($request);
+//        $product = Product::get();
+        return view('/layouts/product/product-edit', compact('products'));
     }
 
     public function update(Request $request,$id){

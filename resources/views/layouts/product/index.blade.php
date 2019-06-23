@@ -17,11 +17,14 @@
         <div class="table-users-row">
             <div class="table-user">
                 @foreach($product as $offer)
+                    @if($offer['wallet'] > '10000')
                     <div class="tale-user-body clearfix">
                         <br>
                         <table class="user-details" style="width: 100%;border: 2px solid black; background: silver;">
                             <tbody>
                             <tr>
+                                <img src="{{$offer->image}}">
+                            </tr><tr>
                                 <td>{{__('education.Models')}}</td>
                                 <td>{{$offer->models}}</td>
                             </tr>
@@ -46,21 +49,24 @@
                                 <td>{{$offer->memory}}GB</td>
                             </tr>
                             <tr>
-                                <td>{{__('education.Kilk')}}</td>
-                                <td>{{$offer->kilk}}</td>
-                            </tr><tr>
                                 <td>{{__('education.Inf')}}</td>
                                 <td>{{$offer->information}}</td>
                             </tr>
                             <tr>
                                 @if(Auth::check()==true && Auth::user()->role=='Moderator')
-                                <td><a href="{{route('edit',$product)}}" class=" action">{{__('offers.Edit')}}</a></td>
-                                <td><a href="{{route('delete',$product)}}" class="action">{{__('offers.Delete')}}</a></td>
+                                <td><a href="{{route('edit',$offer)}}" class=" action">{{__('education.edit')}}</a></td>
+                                <td><a href="{{route('delete',$offer)}}" class="action">{{__('education.delete')}}</a></td>
                                 @endif
+                            </tr>
+                            <tr>
+                                <td>{{__('education.Kilk')}}</td>
+                                <td>{{$offer->kilk}}</td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
+                    @else
+                    @endif
                 @endforeach
             </div>
         </div>

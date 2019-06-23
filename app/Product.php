@@ -20,7 +20,7 @@ class Product extends Authenticatable
     protected $table = 'product';
 
     protected $fillable = [
-        'models', 'cost', 'diagonal', 'processor', 'videocard', 'memory', 'kilk', 'information', 'wallet'
+        'models', 'cost', 'diagonal', 'processor', 'videocard', 'memory', 'kilk', 'information', 'wallet', 'image'
     ];
 
     public function user()
