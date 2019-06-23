@@ -26,8 +26,7 @@ class ProductController extends Controller
 
 //        dd($request);
         $product = Product::create([
-            'image' => $request->files('image'),
-            'name' => $request->input('name'),
+            'models' => $request->input('models'),
             'cost' => $request->input('cost'),
             'wallet' => $request->input('wallet'),
             'diagonal' => $request->input('diagonal'),
@@ -55,9 +54,10 @@ class ProductController extends Controller
     }
 
     public function update(Request $request,$id){
+//        dd($request);
         $product=Product::findorfail($id);
         $product->update([
-            'name' => $request->input('name'),
+            'models' => $request->input('models'),
             'cost' => $request->input('cost'),
             'wallet' => $request->input('wallet'),
             'diagonal' => $request->input('diagonal'),

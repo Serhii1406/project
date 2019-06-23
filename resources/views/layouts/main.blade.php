@@ -63,7 +63,7 @@
         @elseif(Auth::check()==false)
         <a class="py-2 d-none d-md-inline-block" href="{{ route('register') }}">{{__('education.Reg')}}</a>
         @endif
-        <a class="py-2 d-none d-md-inline-block" href="#">{{__('education.Forme')}}</a>
+{{--        <a class="py-2 d-none d-md-inline-block" href="#">{{__('education.Forme')}}</a>--}}
         @if(Auth::user() && Auth::user()->role == 'Moderator')
         <a class="@if(Request::is('admin')) py-2 d-none d-md-inline-block @endif" href="{{route('admin')}}">{{__('education.Admin')}}</a>
         @endif
