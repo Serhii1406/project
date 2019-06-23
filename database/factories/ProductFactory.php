@@ -10,15 +10,23 @@ $factory->define(Product::class, function (Faker $faker) {
         'Toshiba',
         'Acer',
         'Xiaomi',
-        'Apple'
+        'Apple',
+        'Lemovo A313',
+        'Lemovo B415',
+        'Apple Mini',
+        'Toshiba L755',
     ];
     $proc =[
-        'Inel Core i3',
-        'Inel Core i4',
-        'Inel Core i5',
-        'Inel Core i6',
-        'Inel Core i7',
-        'Inel Core i8'
+        'Inel Core i3 5-покоління',
+        'Inel Core i3 6-покоління',
+        'Inel Core i3 4-покоління',
+        'Inel Core i3 3-покоління',
+        'Inel Core i4 3-покоління',
+        'Inel Core i4 4-покоління',
+        'Inel Core i4 5-покоління',
+        'Inel Core i5 7-покоління',
+        'Inel Core i6 6-покоління',
+        'Inel Core i7 5-покоління',
     ];
     $video =[
         'Nvidia Geforce 900M',
@@ -27,6 +35,10 @@ $factory->define(Product::class, function (Faker $faker) {
         'Nvidia Geforce 930M',
         'Nvidia Geforce 940M',
         'Nvidia Geforce 950M',
+        'Nvidia Geforce 840M',
+        'Nvidia Geforce 850M',
+        'Nvidia Geforce 860M',
+        'Nvidia Geforce 870M',
     ];
 
     return [

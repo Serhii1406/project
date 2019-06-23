@@ -2,6 +2,12 @@
 @section('content')
 
     <style>
+        h1 {
+            text-align: center;
+            color: red;
+            padding: 2px;
+            /*background: darkblack;*/
+        }
         TD, TH {
             text-align: center; /* Выравнивание по центру */
             padding: 3px; /* Поля вокруг содержимого ячеек */
@@ -13,18 +19,18 @@
         }
     </style>
     <form>
+        <h1>Шалені оголошення</h1>
         {{ csrf_field() }}
         <div class="users-tables-group">
             <div class="table-users-row">
                 <div class="table-user">
                     @foreach($product as $offer)
+                        @if($offer['kilk'] < 5 && $offer['wallet'] == 'USD')
                         <div class="tale-user-body clearfix">
                             <br>
                             <table class="user-details" style="width: 100%;border: 2px solid black; background: silver;">
                                 <tbody>
                                 <tr>
-                                    <img src="{{$offer->image}}">
-                                </tr><tr>
                                     <td>{{__('education.Models')}}</td>
                                     <td>{{$offer->models}}</td>
                                 </tr>
@@ -59,6 +65,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        @else
+                        @endif
                     @endforeach
                 </div>
             </div>
